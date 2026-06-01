@@ -1,0 +1,248 @@
+body {
+  background-image: url("./bgs/1269904.png");
+  background-color: #cccccc;
+  font-family: "stardewFont", sans-serif;
+  color: #56160c;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@font-face {
+  font-family: "stardewFont";
+  src: url("./fonts/VT323-Regular.ttf") format("truetype");
+}
+h1 {
+  font-family: "stardewFont", sans-serif;
+  font-size: 90px;
+  text-align: center;
+  color: #5a220f;
+  margin-bottom: 50px;
+
+  text-shadow: 2px 2px 0 #fbe7a1 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+.todoDiv {
+  width: 70%;
+  max-width: 1000px;
+  height: 82vh;
+
+  margin: 50px auto;
+  padding: 30px;
+
+  background: rgba(248, 225, 175, 0.9);
+
+  border: 8px solid #7a4b20;
+
+  box-shadow:
+    inset 0 0 0 4px #d9a45d,
+    0 6px 15px rgba(0, 0, 0, 0.4);
+
+  border-radius: 8px;
+  overflow-y: auto;
+}
+.todoDiv::-webkit-scrollbar {
+  width: 10px;
+}
+
+.todoDiv::-webkit-scrollbar-track {
+  background: #d9a45d;
+}
+
+.todoDiv::-webkit-scrollbar-thumb {
+  background: #7a4b20;
+  border: 2px solid #d9a45d;
+}
+.todoText {
+  font-size: 42px;
+  color: #5a220f;
+  letter-spacing: 1;
+  flex-grow: 1;
+}
+.completed {
+  text-decoration: line-through;
+  color: #5d8a5d;
+}
+input {
+  font-family: "stardewFont", sans-serif;
+  font-size: 32px;
+  width: 60%;
+  height: 60px;
+
+  padding: 0 15px;
+  border: 4px solid #7a4b20;
+  color: #5a220f;
+
+  background-color: #fff5d7;
+  outline: none;
+}
+input[type="text"]:focus {
+  box-shadow: 0 0 10px rgba(255, 194, 80, 0.764);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+
+  background: rgba(255, 245, 215, 0.85);
+
+  border: 3px solid #c9974d;
+
+  border-radius: 4px;
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+  position: relative;
+  background: #f8deb0;
+  border: 4px solid #7a4b20;
+
+  margin-right: 15px;
+}
+input[type="checkbox"]:checked {
+  background: #9ad66d;
+}
+input[type="checkbox"]:checked::after {
+  content: "✔";
+
+  /* position: absolute;
+
+  left: 4px;
+  right: 4px;
+  top: 2px; */
+
+  font-size: 18px;
+}
+button {
+  font-family: "stardewFont", sans-serif;
+  font-size: 32px;
+  color: #4a1f0f;
+
+  background: linear-gradient(to bottom, #f5d58c 0%, #e6bb6c 50%, #d39a47 100%);
+
+  border: 4px solid #6b3418;
+  border-radius: 4px;
+
+  padding: 8px 20px;
+  margin: 5px;
+
+  box-shadow:
+    inset 2px 2px 0 #fff1c4,
+    inset -2px -2px 0 #a85f21,
+    3px 3px 0 rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+  transition: transform 0.05s ease;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #ffe6a6 0%, #f2c779 50%, #dfab57 100%);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+
+  box-shadow:
+    inset 2px 2px 0 #a85f21,
+    inset -2px -2px 0 #fff1c4;
+}
+.settingsOpen {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.settingsClosed {
+  display: none;
+}
+
+.categoryTitle {
+  font-family: "stardewFont", sans-serif;
+  display: inline-block;
+  width: 90%;
+  text-align: start;
+
+  padding: 8px 24px;
+
+  font-size: 42px;
+  color: #fff6d5;
+
+  background: linear-gradient(to bottom, #9b6738, #6f4420);
+
+  border: 4px solid #4d2b14;
+
+  text-shadow: 2px 2px 0 #3a1d0e;
+
+  box-shadow:
+    inset 2px 2px 0 #c78d55,
+    inset -2px -2px 0 #563116,
+    4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  margin: 10px 0 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdownButton {
+  min-width: 220px;
+}
+.dropdownMenu {
+  position: absolute;
+
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  z-index: 100;
+
+  border: 4px solid #7a4b20;
+
+  background: #f8deb0;
+}
+.dropdownMenu li {
+  padding: 10px 15px;
+
+  color: #5a220f;
+
+  border-bottom: 2px solid #c9974d;
+
+  cursor: pointer;
+}
+.dropdownMenu li:hover {
+  background: #98fb98;
+}
+
+.currentCategoryDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.currentCategoryDiv h3 {
+  margin: 0;
+  font-size: 32px;
+}
+.newCategoryDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
